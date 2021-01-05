@@ -14,12 +14,19 @@ function App() {
                 <Route path={routes.dashboard}>
                     <Dashboard/>
                 </Route>
-                <Route path={routes.root}>
+                <Route path={routes.root} exact>
                     <Redirect to={routes.login}/>
                 </Route>
+                <Route><NotFound/></Route>
             </Switch>
         </div>
     );
+}
+
+const NotFound = () => {
+    return (
+        <div>Not found</div>
+    )
 }
 
 export default App;
