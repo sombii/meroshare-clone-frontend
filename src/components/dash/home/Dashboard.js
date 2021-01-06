@@ -1,8 +1,13 @@
+import {Link} from "react-router-dom";
+import routes from "../../../constants/routes";
 
 const Dashboard = () => {
     return (
         <div>
-            i am dash
+            <p>
+                i am dash
+                <Link to={routes.details}>click here</Link>
+            </p>
         </div>
     )
 }
