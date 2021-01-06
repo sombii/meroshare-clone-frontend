@@ -8,8 +8,7 @@ import HistoryIcon from '@material-ui/icons/History';
 import AssignmentIndOutlinedIcon from '@material-ui/icons/AssignmentIndOutlined';
 import AssignmentTurnedInOutlinedIcon from '@material-ui/icons/AssignmentTurnedInOutlined';
 import AccountBalanceOutlinedIcon from '@material-ui/icons/AccountBalanceOutlined';
-import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutlined';
-
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 const menuItems = [
     {title: 'Dashboard', icon: <HomeOutlinedIcon/>, route: routes.dashboard},
@@ -20,7 +19,7 @@ const menuItems = [
     {title: 'My Pledge Share Details', icon: <AssignmentTurnedInOutlinedIcon/>, route: routes.pledgeShare},
     {title: 'My Bank Request', icon: <AccountBalanceOutlinedIcon/>, route: routes.bank},
     {title: 'My ASBA', icon: <LanguageIcon/>, route: routes.asba},
-    {title: 'My Purchase Source', icon: <ShoppingBasketOutlinedIcon/>, route: routes.purchase},
+    {title: 'My Purchase Source', icon: <ShoppingCartOutlinedIcon/>, route: routes.purchase},
     {title: 'My EDIS', icon: <CompareArrowsIcon/>, route: routes.edis}
 ]
 export default menuItems;

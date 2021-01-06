@@ -8,6 +8,8 @@ import {dps} from "../../constants/test";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
+import {useHistory} from "react-router";
+import routes from "../../constants/routes";
 
 const styles = () => ({
     container: {
@@ -38,11 +40,20 @@ const styles = () => ({
 
 const Login = ({classes}) => {
 
+    const history = useHistory()
+
+    const submitHandler = e => {
+        e.preventDefault();
+        //do some async call and check user
+        //user good and goto dashboard
+        history.push(routes.dashboard)
+    }
+
     return (
         <Container className={classes.container} maxWidth={"xl"}>
             <Paper className={classes.loginContainer} elevation={3}>
                 <img className={classes.mainLogo} src="assets/main_logo.jpg" alt="logo"/>
-                <form action="">
+                <form onSubmit={submitHandler}>
                     <Autocomplete
                         id="dp list"
                         options={dps}
@@ -77,7 +88,10 @@ const Login = ({classes}) => {
                         verticalAlign: "middle",
                         textTransform: "none"
                     }}
-                            variant={"contained"}>Login</Button>
+                            variant={"contained"}
+                            type="submit"
+                    > Login
+                    </Button>
                 </form>
                 <Typography component={"p"} variant="subtitle2"
                             style={{color: "#aaa"}}>@{new Date().getFullYear()}&nbsp;

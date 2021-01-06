@@ -11,11 +11,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
-import {createMuiTheme, ThemeProvider} from "@material-ui/core";
+import {createMuiTheme, ThemeProvider, Tooltip} from "@material-ui/core";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import {useState} from "react";
-import {NavLink as RouterLink} from "react-router-dom";
+import {NavLink as RouterLink, useHistory} from "react-router-dom";
 import menuItems from "../constants/menuItems";
+import routes from "../constants/routes";
 
 const drawerTheme = createMuiTheme({
     overrides: {
@@ -24,6 +25,12 @@ const drawerTheme = createMuiTheme({
                 minWidth: 30,
                 color: "#fafafa",
             },
+        },
+        MuiListItemText: {
+            primary: {
+                fontFamily: "Dosis",
+                fontSize: "0.85rem",
+            }
         }
     }
 
@@ -80,11 +87,12 @@ const useStyles = makeStyles((theme) => ({
         borderLeft: "4px solid transparent",
         '&:hover': {
             borderColor: "red",
-            backgroundColor: "inherit",
+            backgroundColor: "transparent",
+            color: "#aaa"
         }
     },
     activeMenuItem: {
-        backgroundColor: "#1e2233",
+        backgroundColor: "#1e2233  !important",
         borderLeft: "4px solid red",
     }
 }));
@@ -94,10 +102,15 @@ function Layout({children, window}) {
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = useState(false);
+    const history = useHistory();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    const logoutHandler = () => {
+        history.push(routes.login);
+    }
 
     const drawer = (
         <div>
@@ -115,8 +128,8 @@ function Layout({children, window}) {
                     >
                         <ThemeProvider theme={drawerTheme}>
                             <ListItemIcon>{item.icon}</ListItemIcon>
+                            <ListItemText primary={item.title}/>
                         </ThemeProvider>
-                        <ListItemText primary={item.title}/>
                     </ListItem>
                 ))}
             </List>
@@ -140,15 +153,17 @@ function Layout({children, window}) {
                         <MenuIcon/>
                     </IconButton>
                     <div style={{flexGrow: 1}}/>
-                    <IconButton
-                        color="inherit"
-                        aria-label="log out"
-                        edge="end"
-                        // onClick={handleDrawerToggle}
-                        className={classes.logoutButton}
-                    >
-                        <ExitToAppIcon/>
-                    </IconButton>
+                    <Tooltip title={"Logout"}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="log out"
+                            edge="end"
+                            onClick={logoutHandler}
+                            className={classes.logoutButton}
+                        >
+                            <ExitToAppIcon/>
+                        </IconButton>
+                    </Tooltip>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer} aria-label="main menu">
