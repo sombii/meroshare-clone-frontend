@@ -28,12 +28,16 @@ function App() {
                     <Route>
                         <Layout>
                             <Switch>
-                                <Route path={routes.dashboard}>
-                                    <Dashboard/>
-                                </Route>
-                                <Route path={routes.details}>
-                                    <Details/>
-                                </Route>
+                                <Route path={routes.dashboard}> <Dashboard/> </Route>
+                                <Route path={routes.details}> <Details/> </Route>
+                                <Route path={routes.shares}> <Details/> </Route>
+                                <Route path={routes.transaction}> <Details/> </Route>
+                                <Route path={routes.portfolio}> <Details/> </Route>
+                                <Route path={routes.pledgeShare}> <Details/> </Route>
+                                <Route path={routes.bank}> <Details/> </Route>
+                                <Route path={routes.asba}> <Details/> </Route>
+                                <Route path={routes.purchase}> <Details/> </Route>
+                                <Route path={routes.edis}> <Details/> </Route>
                             </Switch>
                         </Layout>
                     </Route>

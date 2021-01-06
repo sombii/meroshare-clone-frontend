@@ -4,19 +4,18 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {createMuiTheme, ThemeProvider} from "@material-ui/core";
-// import Paper from "@material-ui/core/Paper";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import {useState} from "react";
+import {NavLink as RouterLink} from "react-router-dom";
+import menuItems from "../constants/menuItems";
 
 const drawerTheme = createMuiTheme({
     overrides: {
@@ -75,6 +74,18 @@ const useStyles = makeStyles((theme) => ({
         width: "8rem",
         margin: "0.5rem 2.5rem",
         display: "inline-block"
+    },
+    menuItem: {
+        padding: "0.2rem 1rem",
+        borderLeft: "4px solid transparent",
+        '&:hover': {
+            borderColor: "red",
+            backgroundColor: "inherit",
+        }
+    },
+    activeMenuItem: {
+        backgroundColor: "#1e2233",
+        borderLeft: "4px solid red",
     }
 }));
 
@@ -95,16 +106,19 @@ function Layout({children, window}) {
             </div>
             <Divider/>
             <List>
-                {['Dashboard', 'My Details', 'My Shares', 'My Transaction History', 'My Portfolio',
-                    'My Pledge Share Details', 'My Bank Request', 'My ASBA', 'My Purchase Source', 'My EDIS']
-                    .map((text, index) => (
-                        <ListItem button key={text}>
-                            <ThemeProvider theme={drawerTheme}>
-                                <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
-                            </ThemeProvider>
-                            <ListItemText primary={text}/>
-                        </ListItem>
-                    ))}
+                {menuItems.map((item) => (
+                    <ListItem button key={item.title}
+                              component={RouterLink}
+                              to={item.route}
+                              className={classes.menuItem}
+                              activeClassName={classes.activeMenuItem}
+                    >
+                        <ThemeProvider theme={drawerTheme}>
+                            <ListItemIcon>{item.icon}</ListItemIcon>
+                        </ThemeProvider>
+                        <ListItemText primary={item.title}/>
+                    </ListItem>
+                ))}
             </List>
         </div>
     );
@@ -115,7 +129,7 @@ function Layout({children, window}) {
         <div className={classes.root}>
             <CssBaseline/>
             <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar >
+                <Toolbar>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -125,7 +139,7 @@ function Layout({children, window}) {
                     >
                         <MenuIcon/>
                     </IconButton>
-                    <div style={{flexGrow:1}}/>
+                    <div style={{flexGrow: 1}}/>
                     <IconButton
                         color="inherit"
                         aria-label="log out"

@@ -3,6 +3,14 @@ const routes = {
     login: "/login",
     dashboard: "/dashboard",
     details: "/details",
+    shares: "/shares",
+    transaction: "/transaction",
+    portfolio: "/portfolio",
+    pledgeShare: "/pledgeShare",
+    bank: "/bank",
+    asba: "/asba",
+    purchase: "/purchase",
+    edis: "/eids",
 }
 
 export default routes;
