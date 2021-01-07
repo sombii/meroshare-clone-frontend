@@ -6,6 +6,7 @@ import Dashboard from "./components/dash/home/Dashboard";
 import Layout from "./layout/Layout";
 import Details from "./components/details/Details";
 import {createMuiTheme, ThemeProvider} from "@material-ui/core";
+import Shares from "./components/shares/Shares";
 
 const theme = createMuiTheme({
     typography: {
@@ -30,7 +31,7 @@ function App() {
                             <Switch>
                                 <Route path={routes.dashboard}> <Dashboard/> </Route>
                                 <Route path={routes.details}> <Details/> </Route>
-                                <Route path={routes.shares}> <Details/> </Route>
+                                <Route path={routes.shares}> <Shares/> </Route>
                                 <Route path={routes.transaction}> <Details/> </Route>
                                 <Route path={routes.portfolio}> <Details/> </Route>
                                 <Route path={routes.pledgeShare}> <Details/> </Route>
