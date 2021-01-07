@@ -93,7 +93,7 @@ const Login = ({classes}) => {
                     > Login
                     </Button>
                 </form>
-                <Typography component={"p"} variant="subtitle2"
+                <Typography component={"p"} variant="subtitle2" align="center"
                             style={{color: "#aaa"}}>@{new Date().getFullYear()}&nbsp;
                     <Link href="https://github.com/sombii/" target="_blank" rel="noreferrer"
                           style={{color: '#fff'}}>Sombii</Link>. No Rights Reserved.

@@ -22,7 +22,7 @@ const drawerTheme = createMuiTheme({
     overrides: {
         MuiListItemIcon: {
             root: {
-                minWidth: 30,
+                minWidth: 35,
                 color: "#fafafa",
             },
         },
@@ -75,7 +75,10 @@ const useStyles = makeStyles((theme) => ({
     content: {
         flexGrow: 1,
         padding: theme.spacing(3),
-        fontFamily: 'Roboto Condensed'
+        fontFamily: 'Roboto Condensed',
+        backgroundColor: "#efefef",
+        minHeight: "100vh",
+        color: "#57606b"
     },
     mainLogo: {
         width: "8rem",
@@ -141,7 +144,7 @@ function Layout({children, window}) {
     return (
         <div className={classes.root}>
             <CssBaseline/>
-            <AppBar position="fixed" className={classes.appBar}>
+            <AppBar position="fixed" className={classes.appBar} elevation={1}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
