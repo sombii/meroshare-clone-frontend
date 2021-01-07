@@ -28,7 +28,7 @@ const Details = () => {
 
     return (
         <div>
-            <PageHeader/>
+            <PageHeader title={"My Details"} subtitle={"View My Details"} btn/>
             <Paper square>
                 <Grid container spacing={2} className={classes.table}>
                     <Grid item className={classes.tableItem} xs={12} sm={4}>DP Name</Grid>
