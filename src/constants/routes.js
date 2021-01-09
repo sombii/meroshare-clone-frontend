@@ -11,6 +11,7 @@ const routes = {
     asba: "/asba",
     purchase: "/purchase",
     edis: "/eids",
+    ownProfile: "/ownProfile",
 }
 
 export default routes;

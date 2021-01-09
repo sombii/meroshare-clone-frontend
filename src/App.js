@@ -7,6 +7,7 @@ import Layout from "./layout/Layout";
 import Details from "./components/details/Details";
 import {createMuiTheme, ThemeProvider} from "@material-ui/core";
 import Shares from "./components/shares/Shares";
+import OwnProfile from "./components/ownProfile/OwnProfile";
 
 const theme = createMuiTheme({
     typography: {
@@ -39,6 +40,7 @@ function App() {
                                 <Route path={routes.asba}> <Details/> </Route>
                                 <Route path={routes.purchase}> <Details/> </Route>
                                 <Route path={routes.edis}> <Details/> </Route>
+                                <Route path={routes.ownProfile}> <OwnProfile/> </Route>
                             </Switch>
                         </Layout>
                     </Route>

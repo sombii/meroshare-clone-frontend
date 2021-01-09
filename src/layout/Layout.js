@@ -9,6 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Toolbar from '@material-ui/core/Toolbar';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import {createMuiTheme, ThemeProvider, Tooltip} from "@material-ui/core";
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: drawerWidth,
         },
         backgroundColor: "#efefef",
-        color: "#2a2a2a"
+        color: "#57606b"
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -156,6 +157,17 @@ function Layout({children, window}) {
                         <MenuIcon/>
                     </IconButton>
                     <div style={{flexGrow: 1}}/>
+                    <Tooltip title={"My Profile"}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="log out"
+                            edge="end"
+                            onClick={() => history.push(routes.ownProfile)}
+                            className={classes.logoutButton}
+                        >
+                            <AccountCircleIcon/>
+                        </IconButton>
+                    </Tooltip>
                     <Tooltip title={"Logout"}>
                         <IconButton
                             color="inherit"
