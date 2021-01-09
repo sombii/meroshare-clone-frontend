@@ -11,18 +11,17 @@ const useStyle = makeStyles(theme => ({
     },
     heading: {
         color: "#111210",
-        fontFamily: "Dosis",
         fontWeight: "bold",
     },
     subHeading:{
-        fontSize: "0.8rem",
+        fontFamily: "Roboto Condensed",
+        fontSize: "0.86rem",
     },
     btn: {
         fontSize: "0.7rem",
         verticalAlign: "middle",
         color: "#57606b",
         textTransform: "None",
-        fontFamily: "Dosis",
     }
 }))
 

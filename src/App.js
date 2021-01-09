@@ -11,7 +11,7 @@ import OwnProfile from "./components/ownProfile/OwnProfile";
 
 const theme = createMuiTheme({
     typography: {
-        fontFamily: ['Dosis', 'sans-serif'].join(','),
+        fontFamily: 'Dosis',
     },
 });
 

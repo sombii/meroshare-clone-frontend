@@ -12,30 +12,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Toolbar from '@material-ui/core/Toolbar';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
-import {createMuiTheme, ThemeProvider, Tooltip} from "@material-ui/core";
+import Tooltip from "@material-ui/core/Tooltip";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import {useState} from "react";
 import {NavLink as RouterLink, useHistory} from "react-router-dom";
 import menuItems from "../constants/menuItems";
 import routes from "../constants/routes";
-
-const drawerTheme = createMuiTheme({
-    overrides: {
-        MuiListItemIcon: {
-            root: {
-                minWidth: 35,
-                color: "#fafafa",
-            },
-        },
-        MuiListItemText: {
-            primary: {
-                fontFamily: "Dosis",
-                fontSize: "0.85rem",
-            }
-        }
-    }
-
-});
 
 const drawerWidth = 240;
 
@@ -79,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Roboto Condensed',
         backgroundColor: "#efefef",
         minHeight: "100vh",
-        color: "#57606b"
+        color: "#57606b",
     },
     mainLogo: {
         width: "8rem",
@@ -98,6 +80,13 @@ const useStyles = makeStyles((theme) => ({
     activeMenuItem: {
         backgroundColor: "#1e2233  !important",
         borderLeft: "4px solid red",
+    },
+    listItemText: {
+        fontSize: "0.85rem",
+    },
+    listItemIcon: {
+        minWidth: 35,
+        color: "#fafafa",
     }
 }));
 
@@ -129,11 +118,10 @@ function Layout({children, window}) {
                               to={item.route}
                               className={classes.menuItem}
                               activeClassName={classes.activeMenuItem}
+                              dense
                     >
-                        <ThemeProvider theme={drawerTheme}>
-                            <ListItemIcon>{item.icon}</ListItemIcon>
-                            <ListItemText primary={item.title}/>
-                        </ThemeProvider>
+                        <ListItemIcon className={classes.listItemIcon}>{item.icon}</ListItemIcon>
+                        <ListItemText classes={{primary: classes.listItemText}} primary={item.title}/>
                     </ListItem>
                 ))}
             </List>
@@ -212,12 +200,10 @@ function Layout({children, window}) {
                     </Drawer>
                 </Hidden>
             </nav>
-            <ThemeProvider theme={drawerTheme}>
-                <main className={classes.content}>
-                    <div className={classes.toolbar}/>
-                    {children}
-                </main>
-            </ThemeProvider>
+            <main className={classes.content}>
+                <div className={classes.toolbar}/>
+                {children}
+            </main>
         </div>
     );
 }

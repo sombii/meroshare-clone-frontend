@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import {Paper} from "@material-ui/core";
 import PageHeader from "../shared/PageHeader";
+import Profile from "./Profile";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -76,14 +77,20 @@ const OwnProfile = () => {
             <PageHeader title="My Profile" subtitle="View my profile details"/>
             <Paper square elevation={0} className={classes.paper}>
                 <Tabs value={value} onChange={handleChange} aria-label="own profile tabs"
-                      classes={{ indicator: classes.indicator, }} variant={"scrollable"} scrollButtons={"auto"}>
-                    <Tab label="My Profile" classes={{root: classes.tabRoot,selected: classes.selectedTab}} wrapped/>
-                    <Tab label="Change Password" classes={{root: classes.tabRoot,selected: classes.selectedTab}} wrapped/>
-                    <Tab label="Change Tx Pin" classes={{root: classes.tabRoot,selected: classes.selectedTab}} wrapped/>
-                    <Tab label="Activity Log" classes={{root: classes.tabRoot,selected: classes.selectedTab}} wrapped/>
+                      classes={{indicator: classes.indicator,}} variant={"scrollable"}
+                      scrollButtons={"auto"}
+                >
+                    <Tab label="My Profile" classes={{root: classes.tabRoot, selected: classes.selectedTab}}
+                         disableRipple/>
+                    <Tab label="Change Password" classes={{root: classes.tabRoot, selected: classes.selectedTab}}
+                         disableRipple/>
+                    <Tab label="Change Tx Pin" classes={{root: classes.tabRoot, selected: classes.selectedTab}}
+                         disableRipple/>
+                    <Tab label="Activity Log" classes={{root: classes.tabRoot, selected: classes.selectedTab}}
+                         disableRipple/>
                 </Tabs>
                 <TabPanel value={value} index={0} className={classes.tabPanel}>
-                    Item One
+                    <Profile/>
                 </TabPanel>
                 <TabPanel value={value} index={1} className={classes.tabPanel}>
                     Item Two
