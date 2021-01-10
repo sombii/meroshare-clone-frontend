@@ -92,7 +92,8 @@ const Profile = () => {
                                        style={{backgroundColor: "#333a56", color: "#fff", textTransform: "none"}}>
                                    Renew
                                </Button>
-                           }>
+                           }
+                    >
                         <AlertTitle>INFO</AlertTitle>
                         <Typography component={"p"} variant={"body1"}>Your meroshare account will be expired on
                             2021-09-13.Renew your
@@ -101,15 +102,15 @@ const Profile = () => {
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="body1" component="p">Account Created Date</Typography>
-                    <Typography variant="body1" component="p"><span>2012-01-03</span></Typography>
+                    <Typography variant="body1" component="span">2012-01-03</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="body1" component="p">Account Renewed Date</Typography>
-                    <Typography variant="body1" component="p"><span>2021-02-06</span></Typography>
+                    <Typography variant="body1" component="span">2021-02-06</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="body1" component="p">Password Expiry Date</Typography>
-                    <Typography variant="body1" component="p"><span>2021-06-09</span></Typography>
+                    <Typography variant="body1" component="span">2021-06-09</Typography>
                 </Grid>
             </Grid>
         </Grid>

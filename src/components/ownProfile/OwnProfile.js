@@ -8,6 +8,8 @@ import Box from '@material-ui/core/Box';
 import {Paper} from "@material-ui/core";
 import PageHeader from "../shared/PageHeader";
 import Profile from "./Profile";
+import ChangePassword from "./ChangePassword";
+import ChangePin from "./ChangePin";
 
 function TabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -36,9 +38,12 @@ TabPanel.propTypes = {
 };
 
 const useStyles = makeStyles(theme => ({
-    // tabs: {
-    //     overflowX: "auto",
-    // },
+    tabs: {
+        overflowX: "auto",
+        "& button": {
+            minWidth: 0,
+        }
+    },
     paper: {
         backgroundColor: "#efefef",
     },
@@ -77,8 +82,8 @@ const OwnProfile = () => {
             <PageHeader title="My Profile" subtitle="View my profile details"/>
             <Paper square elevation={0} className={classes.paper}>
                 <Tabs value={value} onChange={handleChange} aria-label="own profile tabs"
-                      classes={{indicator: classes.indicator,}} variant={"scrollable"}
-                      scrollButtons={"auto"}
+                      classes={{indicator: classes.indicator,flexContainer: classes.tabs}}
+                      // variant={"scrollable"} scrollButtons={"auto"}
                 >
                     <Tab label="My Profile" classes={{root: classes.tabRoot, selected: classes.selectedTab}}
                          disableRipple/>
@@ -93,13 +98,13 @@ const OwnProfile = () => {
                     <Profile/>
                 </TabPanel>
                 <TabPanel value={value} index={1} className={classes.tabPanel}>
-                    Item Two
+                    <ChangePassword/>
                 </TabPanel>
                 <TabPanel value={value} index={2} className={classes.tabPanel}>
-                    Item Three
+                    <ChangePin/>
                 </TabPanel>
                 <TabPanel value={value} index={3} className={classes.tabPanel}>
-                    Item 4
+                    Activity log
                 </TabPanel>
             </Paper>
 

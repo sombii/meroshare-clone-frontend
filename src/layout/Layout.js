@@ -101,6 +101,11 @@ function Layout({children, window}) {
         setMobileOpen(!mobileOpen);
     };
 
+    const handleDrawerToggle2 = () => {
+        //lol just being lazy
+        setMobileOpen(false);
+    };
+
     const logoutHandler = () => {
         history.push(routes.login);
     }
@@ -119,6 +124,7 @@ function Layout({children, window}) {
                               className={classes.menuItem}
                               activeClassName={classes.activeMenuItem}
                               dense
+                              onClick={handleDrawerToggle2}
                     >
                         <ListItemIcon className={classes.listItemIcon}>{item.icon}</ListItemIcon>
                         <ListItemText classes={{primary: classes.listItemText}} primary={item.title}/>
