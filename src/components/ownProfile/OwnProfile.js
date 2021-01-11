@@ -38,7 +38,7 @@ TabPanel.propTypes = {
 };
 
 const useStyles = makeStyles(theme => ({
-    tabs: {
+    overflow: {
         overflowX: "auto",
         "& button": {
             minWidth: 0,
@@ -82,8 +82,8 @@ const OwnProfile = () => {
             <PageHeader title="My Profile" subtitle="View my profile details"/>
             <Paper square elevation={0} className={classes.paper}>
                 <Tabs value={value} onChange={handleChange} aria-label="own profile tabs"
-                      classes={{indicator: classes.indicator,flexContainer: classes.tabs}}
-                      // variant={"scrollable"} scrollButtons={"auto"}
+                      classes={{indicator: classes.indicator, flexContainer: classes.overflow}}
+                    // variant={"scrollable"} scrollButtons={"auto"}
                 >
                     <Tab label="My Profile" classes={{root: classes.tabRoot, selected: classes.selectedTab}}
                          disableRipple/>

@@ -9,6 +9,7 @@ import {createMuiTheme, ThemeProvider} from "@material-ui/core";
 import Shares from "./components/shares/Shares";
 import OwnProfile from "./components/ownProfile/OwnProfile";
 import Edis from "./components/edis/Edis";
+import PledgeShare from "./components/pledge/PlegdeShare";
 
 const theme = createMuiTheme({
     typography: {
@@ -36,7 +37,7 @@ function App() {
                                 <Route path={routes.shares}> <Shares/> </Route>
                                 <Route path={routes.transaction}> <Details/> </Route>
                                 <Route path={routes.portfolio}> <Details/> </Route>
-                                <Route path={routes.pledgeShare}> <Details/> </Route>
+                                <Route path={routes.pledgeShare}> <PledgeShare/> </Route>
                                 <Route path={routes.bank}> <Details/> </Route>
                                 <Route path={routes.asba}> <Details/> </Route>
                                 <Route path={routes.purchase}> <Details/> </Route>
