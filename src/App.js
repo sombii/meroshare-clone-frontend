@@ -12,6 +12,14 @@ import Edis from "./components/edis/Edis";
 import PledgeShare from "./components/pledge/PlegdeShare";
 
 const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#333a56",
+        },
+        secondary: {
+            main: "#57606b",
+        },
+    },
     typography: {
         fontFamily: 'Dosis',
     },
