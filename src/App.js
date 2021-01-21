@@ -10,6 +10,8 @@ import Shares from "./components/shares/Shares";
 import OwnProfile from "./components/ownProfile/OwnProfile";
 import Edis from "./components/edis/Edis";
 import PledgeShare from "./components/pledge/PlegdeShare";
+import PurchaseSource from "./components/purchase/PurchaseSource";
+import MyAsba from "./components/asba/MyAsba";
 
 const theme = createMuiTheme({
     palette: {
@@ -22,6 +24,20 @@ const theme = createMuiTheme({
     },
     typography: {
         fontFamily: 'Dosis',
+    },
+    overrides: {
+        MuiTooltip: {
+            tooltip: {
+                color: "#fff",
+                backgroundColor: "#333",
+                fontSize: "0.8rem"
+            },
+            arrow: {
+                "&::before": {
+                    backgroundColor: "#333",
+                }
+            }
+        }
     },
 });
 
@@ -47,8 +63,8 @@ function App() {
                                 <Route path={routes.portfolio}> <Details/> </Route>
                                 <Route path={routes.pledgeShare}> <PledgeShare/> </Route>
                                 <Route path={routes.bank}> <Details/> </Route>
-                                <Route path={routes.asba}> <Details/> </Route>
-                                <Route path={routes.purchase}> <Details/> </Route>
+                                <Route path={routes.asba}> <MyAsba/> </Route>
+                                <Route path={routes.purchase}> <PurchaseSource/> </Route>
                                 <Route path={routes.edis}> <Edis/> </Route>
                                 <Route path={routes.ownProfile}> <OwnProfile/> </Route>
                             </Switch>

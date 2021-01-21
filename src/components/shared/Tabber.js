@@ -21,7 +21,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Box my={3}>
-                    <Typography>{children}</Typography>
+                    <div>{children}</div>
                 </Box>
             )}
         </div>
@@ -86,9 +86,9 @@ const Tabber = ({tabs, tabContent}) => {
             </AppBar>
             {tabContent.map((item, i) => (
                 <TabPanel value={value} index={i}>
-                    <Paper square elevation={0}>
+                    {/*<Paper square elevation={0}>*/}
                         {item}
-                    </Paper>
+                    {/*</Paper>*/}
                 </TabPanel>
             ))}
         </div>

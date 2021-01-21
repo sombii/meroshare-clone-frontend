@@ -151,7 +151,7 @@ function Layout({children, window}) {
                         <MenuIcon/>
                     </IconButton>
                     <div style={{flexGrow: 1}}/>
-                    <Tooltip title={"My Profile"}>
+                    <Tooltip title={"My Profile"} arrow>
                         <IconButton
                             color="inherit"
                             aria-label="log out"
@@ -162,7 +162,7 @@ function Layout({children, window}) {
                             <AccountCircleIcon/>
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title={"Logout"}>
+                    <Tooltip title={"Logout"} arrow>
                         <IconButton
                             color="inherit"
                             aria-label="log out"
