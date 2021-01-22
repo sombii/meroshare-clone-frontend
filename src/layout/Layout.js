@@ -62,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#efefef",
         minHeight: "100vh",
         color: "#57606b",
+        overflow: "hidden",
     },
     mainLogo: {
         width: "8rem",

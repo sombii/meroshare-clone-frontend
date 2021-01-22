@@ -12,6 +12,7 @@ import Edis from "./components/edis/Edis";
 import PledgeShare from "./components/pledge/PlegdeShare";
 import PurchaseSource from "./components/purchase/PurchaseSource";
 import MyAsba from "./components/asba/MyAsba";
+import TransactionHistory from "./components/transaction/TransactionHistory";
 
 const theme = createMuiTheme({
     palette: {
@@ -59,7 +60,7 @@ function App() {
                                 <Route path={routes.dashboard}> <Dashboard/> </Route>
                                 <Route path={routes.details}> <Details/> </Route>
                                 <Route path={routes.shares}> <Shares/> </Route>
-                                <Route path={routes.transaction}> <Details/> </Route>
+                                <Route path={routes.transaction}> <TransactionHistory/> </Route>
                                 <Route path={routes.portfolio}> <Details/> </Route>
                                 <Route path={routes.pledgeShare}> <PledgeShare/> </Route>
                                 <Route path={routes.bank}> <Details/> </Route>
