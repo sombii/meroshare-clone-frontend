@@ -10,6 +10,7 @@ import WcOutlinedIcon from '@material-ui/icons/WcOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PhoneEnabledOutlinedIcon from '@material-ui/icons/PhoneEnabledOutlined';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import {Tooltip} from "@material-ui/core";
 
 
 const useStyles = makeStyles(() => ({
@@ -65,22 +66,35 @@ const Profile = () => {
                         INFORMATION</Typography>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="body1" component="p"><CreditCardIcon/>130142000145346</Typography>
+                    <Tooltip title="BOID" arrow placement="top-start">
+                        <Typography variant="body1" component="p"><CreditCardIcon/>130142000145346</Typography>
+                    </Tooltip>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="body1" component="p"><PersonOutlinedIcon/>SANJOG RAI</Typography>
+                    <Tooltip title="Name" arrow placement="top-start">
+                        <Typography variant="body1" component="p"><PersonOutlinedIcon/>SANJOG RAI</Typography>
+                    </Tooltip>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="body1" component="p"><WcOutlinedIcon/>MALE</Typography>
+                    <Tooltip title="Gender" arrow placement="top-start">
+                        <Typography variant="body1" component="p"><WcOutlinedIcon/>MALE</Typography>
+                    </Tooltip>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="body1" component="p"><MailOutlineIcon/>sanjog@sombex.com</Typography>
+                    <Tooltip title="Email" arrow placement="top-start">
+                        <Typography variant="body1" component="p"><MailOutlineIcon/>sanjog@sombex.com</Typography>
+                    </Tooltip>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="body1" component="p"><PhoneEnabledOutlinedIcon/>9807123304</Typography>
+                    <Tooltip title="Contact Number" arrow placement="top-start">
+                        <Typography variant="body1" component="p"><PhoneEnabledOutlinedIcon/>9807123304</Typography>
+                    </Tooltip>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <Typography variant="body1" component="p"><LocationOnOutlinedIcon/>Hetauda-5, Bagmati, Nepal</Typography>
+                    <Tooltip title="Address" arrow placement="top-start">
+                        <Typography variant="body1" component="p"><LocationOnOutlinedIcon/>Hetauda-5, Bagmati,
+                            Nepal</Typography>
+                    </Tooltip>
                 </Grid>
                 <Grid item xs={12}>
                     <Typography className={classes.pHead} variant="body1" component="p">ACCOUNT INFORMATION</Typography>

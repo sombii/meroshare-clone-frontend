@@ -151,7 +151,6 @@ const TransactionHistory = () => {
             <Card style={{marginTop: "2rem",}}>
                 <DataTable
                     noHeader
-                    responsive
                     columns={columns}
                     data={data}
                 />

@@ -14,6 +14,7 @@ import PurchaseSource from "./components/purchase/PurchaseSource";
 import MyAsba from "./components/asba/MyAsba";
 import TransactionHistory from "./components/transaction/TransactionHistory";
 import BankRequest from "./components/bank/BankRequest";
+import MyPortfolio from "./components/portfolio/MyPortfolio";
 
 const theme = createMuiTheme({
     palette: {
@@ -62,7 +63,7 @@ function App() {
                                 <Route path={routes.details}> <Details/> </Route>
                                 <Route path={routes.shares}> <Shares/> </Route>
                                 <Route path={routes.transaction}> <TransactionHistory/> </Route>
-                                <Route path={routes.portfolio}> <Details/> </Route>
+                                <Route path={routes.portfolio}> <MyPortfolio/> </Route>
                                 <Route path={routes.pledgeShare}> <PledgeShare/> </Route>
                                 <Route path={routes.bank}> <BankRequest/> </Route>
                                 <Route path={routes.asba}> <MyAsba/> </Route>
