@@ -12,6 +12,7 @@ const routes = {
     purchase: "/purchase",
     edis: "/eids",
     ownProfile: "/ownProfile",
+    aboutAuthor: "/aboutAuthor",
 }
 
 export default routes;
