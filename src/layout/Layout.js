@@ -18,6 +18,7 @@ import {useState} from "react";
 import {NavLink as RouterLink, useHistory} from "react-router-dom";
 import menuItems from "../constants/menuItems";
 import routes from "../constants/routes";
+import Container from "@material-ui/core/Container";
 
 const drawerWidth = 240;
 
@@ -65,9 +66,10 @@ const useStyles = makeStyles((theme) => ({
         overflow: "hidden",
     },
     mainLogo: {
-        width: "8rem",
-        margin: "0.5rem 2.5rem",
-        display: "inline-block"
+        width: "7rem",
+        margin: "0 auto",
+        display: "block",
+        padding: "0.7rem 0"
     },
     menuItem: {
         padding: "0.2rem 1rem",
@@ -83,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
         borderLeft: "4px solid red",
     },
     listItemText: {
-        fontSize: "0.85rem",
+        fontSize: "0.8rem",
     },
     listItemIcon: {
         minWidth: 35,
@@ -178,7 +180,7 @@ function Layout({children, window}) {
             </AppBar>
             <nav className={classes.drawer} aria-label="main menu">
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Hidden mdUp implementation="css">
+                <Hidden mdUp >
                     <Drawer
                         container={container}
                         variant="temporary"
@@ -195,7 +197,7 @@ function Layout({children, window}) {
                         {drawer}
                     </Drawer>
                 </Hidden>
-                <Hidden smDown Down implementation="css">
+                <Hidden smDown>
                     <Drawer
                         classes={{
                             paper: classes.drawerPaper,
@@ -208,8 +210,10 @@ function Layout({children, window}) {
                 </Hidden>
             </nav>
             <main className={classes.content}>
+                <Container maxWidth="xl">
                 <div className={classes.toolbar}/>
                 {children}
+                </Container>
             </main>
         </div>
     );

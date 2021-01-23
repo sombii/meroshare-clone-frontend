@@ -5,7 +5,7 @@ import {Pagination} from "@material-ui/lab";
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
-import {Chip, Tooltip} from "@material-ui/core";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles(() => ({
     gridRoot: {
