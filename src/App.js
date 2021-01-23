@@ -17,6 +17,11 @@ import BankRequest from "./components/bank/BankRequest";
 import MyPortfolio from "./components/portfolio/MyPortfolio";
 
 const theme = createMuiTheme({
+    props: {
+        MuiButtonBase: {
+            // disableRipple: true, //disable ripple on whole app
+        }
+    },
     palette: {
         primary: {
             main: "#333a56",

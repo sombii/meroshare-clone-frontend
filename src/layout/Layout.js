@@ -19,6 +19,7 @@ import {NavLink as RouterLink, useHistory} from "react-router-dom";
 import menuItems from "../constants/menuItems";
 import routes from "../constants/routes";
 import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
 
 const drawerWidth = 240;
 
@@ -114,26 +115,55 @@ function Layout({children, window}) {
     }
 
     const drawer = (
-        <div>
-            <div className={classes.toolbar}>
-                <img className={classes.mainLogo} src="assets/main_logo.jpg" alt="logo"/>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "100%",
+            position: "relative",
+            overflow: "hidden",
+        }}>
+            <div style={{
+                background: "url(assets/watermark.png)  -49px 118%/370px no-repeat",
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                width: "100%",
+                height: "15rem",
+                marginBottom: "-5rem",
+            }}>
+
             </div>
-            <Divider/>
-            <List>
-                {menuItems.map((item) => (
-                    <ListItem button key={item.title}
-                              component={RouterLink}
-                              to={item.route}
-                              className={classes.menuItem}
-                              activeClassName={classes.activeMenuItem}
-                              dense
-                              onClick={handleDrawerToggle2}
-                    >
-                        <ListItemIcon className={classes.listItemIcon}>{item.icon}</ListItemIcon>
-                        <ListItemText classes={{primary: classes.listItemText}} primary={item.title}/>
-                    </ListItem>
-                ))}
-            </List>
+            <div>
+                <div className={classes.toolbar}>
+                    <img className={classes.mainLogo} src="assets/main_logo.jpg" alt="logo"/>
+                </div>
+                <Divider/>
+                <List>
+                    {menuItems.map((item) => (
+                        <ListItem button key={item.title}
+                                  component={RouterLink}
+                                  to={item.route}
+                                  className={classes.menuItem}
+                                  activeClassName={classes.activeMenuItem}
+                                  dense
+                                  onClick={handleDrawerToggle2}
+                        >
+                            <ListItemIcon className={classes.listItemIcon}>{item.icon}</ListItemIcon>
+                            <ListItemText classes={{primary: classes.listItemText}} primary={item.title}/>
+                        </ListItem>
+                    ))}
+                </List>
+            </div>
+            <div>
+                <Divider/>
+                <Box m={3}
+                     style={{fontFamily: "Roboto Condensed", fontSize: "0.75rem", position: "relative", "z-index": 1}}>
+                    <span> © {new Date().getFullYear()} CDS and Clearing Limited.</span>
+                    <br/>
+                    <span>None Rights Reserved.<a href="//github.com/sombii" target="_blank">sombii</a></span>
+                </Box>
+            </div>
         </div>
     );
 
@@ -180,7 +210,7 @@ function Layout({children, window}) {
             </AppBar>
             <nav className={classes.drawer} aria-label="main menu">
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Hidden mdUp >
+                <Hidden mdUp>
                     <Drawer
                         container={container}
                         variant="temporary"
@@ -211,8 +241,8 @@ function Layout({children, window}) {
             </nav>
             <main className={classes.content}>
                 <Container maxWidth="xl">
-                <div className={classes.toolbar}/>
-                {children}
+                    <div className={classes.toolbar}/>
+                    {children}
                 </Container>
             </main>
         </div>
