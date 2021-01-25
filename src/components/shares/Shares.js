@@ -168,8 +168,8 @@ const Shares = () => {
     return (
         <div className={classes.root}>
             <PageHeader title={"My Shares"} subtitle={"View My Share Details"} btn/>
-            <Paper style={{height: "400px"}} square elevation={0}>
-                <DataTable data={data} columns={columns} pagination noHeader/>
+            <Paper square elevation={0}>
+                <DataTable data={data} columns={columns} pagination noHeader />
             </Paper>
         </div>
     )
