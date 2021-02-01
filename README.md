@@ -1,4 +1,4 @@
-# MeroShare Clone Frontend (MERN)
+# MeroShare Clone Frontend (React, Material UI)
 
 **This project is still a work in progress.**
 
