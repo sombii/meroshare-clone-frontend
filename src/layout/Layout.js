@@ -158,10 +158,10 @@ function Layout({children, window}) {
             <div>
                 <Divider/>
                 <Box m={3}
-                     style={{fontFamily: "Roboto Condensed", fontSize: "0.75rem", position: "relative", "z-index": 1}}>
+                     style={{fontFamily: "Roboto Condensed", fontSize: "0.75rem", position: "relative", zIndex: 1}}>
                     <span> © {new Date().getFullYear()} CDS and Clearing Limited.</span>
                     <br/>
-                    <span>None Rights Reserved.<a href="//github.com/sombii" target="_blank">sombii</a></span>
+                    <span>None Rights Reserved.<a href="https://sanjogr.com.np" rel="noreferrer" target="_blank">sombii</a></span>
                 </Box>
             </div>
         </div>

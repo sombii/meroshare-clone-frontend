@@ -4,14 +4,14 @@ import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import AssignmentOutlinedIcon from '@material-ui/icons/AssignmentOutlined';
 import CardContent from "@material-ui/core/CardContent";
-import {CardActions, Icon, Paper} from "@material-ui/core";
+import {CardActions, Paper} from "@material-ui/core";
 import DataTable from "react-data-table-component";
 import ThemedButton from "../../shared/ThemedButton";
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import IconButton from "@material-ui/core/IconButton";
 import Link from "@material-ui/core/Link";
+import LanguageIcon from "@material-ui/icons/Language";
 
 const useStyles = makeStyles(() => ({
     cardRoot: {
@@ -64,15 +64,20 @@ const Dashboard = () => {
                 <Grid item xs={12} sm={6}>
                     <Paper elevation={0} square className={classes.authorPaper}>
                         {/*<AccountCircleOutlinedIcon style={{fontSize: "4rem"}}/>*/}
-                        <Typography component="p" variant="h6">Author: <strong>Sanjog Rai</strong></Typography>
-                        <Link href="http://github.com/sombii" target="_blank">
+                        <Typography component="p" variant="h6">Author: <strong>Sanjog Rai</strong> </Typography>
+                        <Link href="https://github.com/sombii" target="_blank" rel="noreferrer">
                             <IconButton>
                                 <GitHubIcon style={{color: "skyblue"}}/>
                             </IconButton>
                         </Link>
-                        <Link href="https://www.linkedin.com/in/sombii" target="_blank">
+                        <Link href="https://www.linkedin.com/in/sombii" target="_blank" rel="noreferrer">
                             <IconButton>
                                 <LinkedInIcon style={{color: "skyblue"}}/>
+                            </IconButton>
+                        </Link>
+                        <Link href="https://sanjogr.com.np" target="_blank" rel="noreferrer">
+                            <IconButton>
+                                <LanguageIcon style={{color: "skyblue"}}/>
                             </IconButton>
                         </Link>
                     </Paper>
